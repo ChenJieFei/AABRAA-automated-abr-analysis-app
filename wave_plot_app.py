@@ -695,11 +695,15 @@ def calculate_hearing_threshold(df, freq):
     return min_threshold
 
 # Streamlit UI
-st.title("Wave Plotting App")
+st.title("AABRAA: Automated ABR Analysis App")
 st.sidebar.header("Upload File")
-uploaded_files = st.sidebar.file_uploader("Choose a file", type=["csv", "arf"], accept_multiple_files=True)
+default_file_path = os.path.join('ABR_exported_files', 'B1_1282_baseline.csv') # Pre-loaded Example Data
+if os.path.isfile(default_file_path):
+    data = pd.read_csv(default_file_path)
+else:
+    uploaded_files = st.sidebar.file_uploader("Choose a file", type=["csv", "arf"], accept_multiple_files=True)
 is_rz_file = st.sidebar.radio("Select ARF File Type:", ("RP", "RZ"))
-is_level = st.sidebar.radio("Select dB You Are Studying:", ("Attenuation", "Level"))
+is_level = st.sidebar.radio("Select Level(dB) Units:", ("Attenuation", "Level"))
 
 annotations = []
 
