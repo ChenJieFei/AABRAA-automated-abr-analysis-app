@@ -706,6 +706,7 @@ is_rz_file = st.sidebar.radio("Select ARF File Type:", ("RP", "RZ"))
 is_level = st.sidebar.radio("Select Level(dB) Units:", ("Attenuation", "Level"))
 
 annotations = []
+uploaded_files = []
 
 if uploaded_files:
     dfs = []
