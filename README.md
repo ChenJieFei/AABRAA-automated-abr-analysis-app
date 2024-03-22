@@ -1,7 +1,7 @@
 # Auditory Brainstem Response (ABR) Data Analysis App
 
 ## Overview
-This application is designed to assist researchers in the analysis of auditory brainstem response (ABR) waves. It provides a suite of tools for uploading, visualizing, and analyzing ABR waves.
+AABRAA (Automated ABR Analysis App) is designed to assist researchers in the analysis of auditory brainstem response (ABR) data recorded from Tucker Davis Technology's BioSigRZ software. It provides a suite of tools for uploading, visualizing, and analyzing ABR waves.
 
 ## Features
 
