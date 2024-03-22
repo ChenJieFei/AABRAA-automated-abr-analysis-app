@@ -12,7 +12,7 @@ The app allows researchers to plot and visualize ABR waves.
 Included in the repository is a Jupyter notebook that trains an XGBoost gradient boosting machine to identify the decibel (dB) level at which an ABR corresponds to hearing (hearing threshold), given ABRs across different dB levels. This automatic threshold detection machine learning algorithm is integrated into the app, providing a valuable tool for researchers.
 
 ### Peak and Trough Detection
-These waves typically have a 5 peak structure, and the app has the capability to automatically identify the coordinates of these peaks and troughs.
+These waves typically have a 5 peak structure, and the app has the capability to automatically identify the coordinates of these peaks and troughs. Furthermore, the app utilizes these peak and trough coordinates to calculate useful metrics such as peak-to-peak ratios. Users also have the option to export all this data for further analysis.
 
 ## Getting Started
 
