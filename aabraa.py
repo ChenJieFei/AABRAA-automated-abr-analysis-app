@@ -697,16 +697,41 @@ def calculate_hearing_threshold(df, freq):
 # Streamlit UI
 st.title("AABRAA: Automated ABR Analysis App")
 st.sidebar.header("Upload File")
-default_file_path = os.path.join('ABR_exported_files', 'B1_1282_baseline.csv') # Pre-loaded Example Data
+# Pre-loaded example data
+default_file_path = os.path.join('ABR_exported_files', 'B1_1282_baseline.csv')
+
+# Function to load data
+def load_data(file_path):
+    data = pd.read_csv(file_path)
+    return data
+
+# Check if the default file exists and load it
 if os.path.isfile(default_file_path):
-    data = pd.read_csv(default_file_path)
+    data = load_data(default_file_path)
 else:
-    uploaded_files = st.sidebar.file_uploader("Choose a file", type=["csv", "arf"], accept_multiple_files=True)
+    data = None
+
+# Allow the user to upload files
+uploaded_files = st.sidebar.file_uploader("Choose a file", type=["csv", "arf"], accept_multiple_files=True)
+
+# If the user uploads a file, use the first uploaded file
+if uploaded_files:
+    data = load_data(uploaded_files[0])
+
+# Display the DataFrame in the app if data is loaded
+if data is not None:
+    st.write(data)
+
+# Radio buttons for file type selection
 is_rz_file = st.sidebar.radio("Select ARF File Type:", ("RP", "RZ"))
+
+# Radio buttons for level units selection
 is_level = st.sidebar.radio("Select Level(dB) Units:", ("Attenuation", "Level"))
 
+# Initialize an empty list for annotations
 annotations = []
-uploaded_files = []
+
+annotations = []
 
 if uploaded_files:
     dfs = []
