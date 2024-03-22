@@ -18,7 +18,7 @@ These waves typically have a 5 peak structure, and the app has the capability to
 
 You have two options to get started with the ABR Analysis App:
 
-1. **Use the Web App:** You can access the web application directly at https://abr-analysis.streamlit.app/.
+1. **Use the Web App:** You can access the web application directly at https://aabraa-automated-abr-analysis.streamlit.app/.
 
 2. **Run Locally:**
     - Clone the repository
